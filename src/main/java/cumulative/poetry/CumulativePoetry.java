@@ -5,25 +5,7 @@ public class CumulativePoetry {
 	public static void main(String[] args) {
 		 Poet poet = new Poet();
 		 String poem = "";
-		 if(args[0] != "--echo") {
-			 switch(args[0]) {
-			 	//Option Reveal for day
-			 	case "--reveal-for-day":
-			 		poem = poet.revealforday(Integer.parseInt(args[1])); 
-			 		break;
-			 		
-			 	//Option Recite
-			 	case "--recite":
-			 		poem = poet.recite();
-			 		break;
-			 	
-			 	//Invalid Option
-			 	default:
-			 		poem = "Invalid Option";
-			 }
-			 System.out.println(poem);
-		 }
-		 else {
+		 if(args[0].equals("--echo")) {
 			 switch(args[1]) {
 			 	//Option Reveal for day with Echo
 			 	case "--reveal-for-day":
@@ -40,6 +22,24 @@ public class CumulativePoetry {
 			 		poem = "Invalid Option";
 			 }
 			 System.out.println(poem);
+		 }
+		 else {
+			 switch(args[0]) {
+			 	//Option Reveal for day
+			 	case "--reveal-for-day":
+			 		poem = poet.revealforday(Integer.parseInt(args[1])); 
+			 		break;
+			 		
+			 	//Option Recite
+			 	case "--recite":
+			 		poem = poet.recite();
+			 		break;
+			 	
+			 	//Invalid Option
+			 	default:
+			 		poem = "Invalid Option";
+			 }
+			 System.out.println(poem);	
 		 }
 	 }
 }
