@@ -21,20 +21,20 @@ public class Poet {
 		for(int i = 1;i < day;i++) {
 			poemtillday = poem[11 - i]+ "\n" + poemtillday;
 		}
-		return "This is " + poemtillday;
+		return "This is " + poemtillday + ".";
 	}
 	
 	//Functionality to Reveal Poem at once day wise
     public String recite() {
     	String recitepoem = poem[11];
-		String result = "Day 1 - \nThis is " + recitepoem + "\n\n";
+		String result = "Day 1 - \nThis is " + recitepoem + "." + "\n\n";
 		for(int i = 1;i < 12;i++) {
 			recitepoem = poem[11 - i]+ "\n" + recitepoem;
 			int day = i + 1;
 			if(day == 12)
-				result = result + "Day "+ day +" - \nThis is " + recitepoem;
+				result = result + "Day "+ day +" - \nThis is " + recitepoem + ".";
 			else 
-				result = result + "Day "+ day +" - \nThis is " + recitepoem + "\n\n";
+				result = result + "Day "+ day +" - \nThis is " + recitepoem + "." + "\n\n";
 		}
 		return result;
     }
@@ -49,21 +49,21 @@ public class Poet {
   			poemtillday = poem[11 - i]+ "\n" + poemtillday;
   			poemtillday = poem[11 - i]+ "\n" + poemtillday;
   		}
-  		return "This is " + poemtillday;
+  		return "This is " + poemtillday + ".";
   	}
   	
   	//Functionality to Reveal Poem at once day wise with Echo
     public String recite_echo() {
     	String recitepoem = poem[11]+ "\n" + poem[11];
-		String result = "Day 1 - \nThis is " + recitepoem + "\n\n";
+		String result = "Day 1 - \nThis is " + recitepoem + "." + "\n\n";
 		for(int i = 1;i < 12;i++) {
 			recitepoem = poem[11 - i]+ "\n" + recitepoem;
 			recitepoem = poem[11 - i]+ "\n" + recitepoem;
 			int day = i + 1;
 			if(day == 12)
-				result = result + "Day "+ day +" - \nThis is " + recitepoem;
+				result = result + "Day "+ day +" - \nThis is " + recitepoem + ".";
 			else 
-				result = result + "Day "+ day +" - \nThis is " + recitepoem + "\n\n";
+				result = result + "Day "+ day +" - \nThis is " + recitepoem + "." + "\n\n";
 		}
 		return result;
     }

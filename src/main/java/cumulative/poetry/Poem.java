@@ -14,5 +14,5 @@ public class Poem {
 		    "the cat that killed",
 		    "the rat that ate",
 		    "the malth that lay in",
-		    "the house that Jack built."};
+		    "the house that Jack built"};
 }
