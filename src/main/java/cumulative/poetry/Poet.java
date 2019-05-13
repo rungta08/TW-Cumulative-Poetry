@@ -5,12 +5,14 @@ package cumulative.poetry;
 
 public class Poet {
 	
+	//Initialise poem 
 	String[] poem;
 	Poet(){
 		Poem poem = new Poem();
 		this.poem = poem.eachdaytale;
 	}
 	
+	//Functionality to Reveal Poem day wise
 	public String revealforday(int day) {
 		if(day < 1 || day > 12) {
 			return "Invalid Days";
@@ -22,7 +24,7 @@ public class Poet {
 		return "This is " + poemtillday;
 	}
 	
-	
+	//Functionality to Reveal Poem at once day wise
     public String recite() {
     	String recitepoem = poem[11];
 		String result = "Day 1 - \nThis is " + recitepoem + "\n\n";

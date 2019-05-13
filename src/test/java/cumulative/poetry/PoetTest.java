@@ -8,16 +8,19 @@ public class PoetTest {
 	
 	private Poet poet;
 	
+	//Will be running before every test 
 	@Before
 	public void  setUp() {
 		poet = new Poet();
 	}
 	
+	//Should be giving some output
     @Test 
     public void shouldSaySomething() {
         assertFalse("Poet should say something, but said nothing",poet.recite().isEmpty());
     }
     
+    //Should be reciting whole poem day wise
     @Test 
     public void shouldSayPoem() {
     	String actual = poet.recite();
@@ -28,6 +31,7 @@ public class PoetTest {
     	
     }
     
+    //Should Reveal poem Day wise
     @Test 
     public void shouldRevealForDay() {
     	String actual = poet.revealforday(2);
