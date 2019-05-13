@@ -94,6 +94,7 @@ This is the horse and the hound and the horn that belonged to
     the malth that lay in 
     the house that Jack built.
     
+    
 ## Release 2
 
 The poetry class wants each line to echo twice, if the flag is specified. Else retain the default behaviour. The purpose is that the poetry starts reading more like a song.
