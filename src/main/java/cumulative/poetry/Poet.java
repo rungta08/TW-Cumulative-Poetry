@@ -4,7 +4,25 @@
 package cumulative.poetry;
 
 public class Poet {
+	
+	String[] poem;
+	Poet(){
+		Poem poem = new Poem();
+		this.poem = poem.eachdaytale;
+	}
+	
+	
     public String recite() {
-        return "";
+    	String recitepoem = poem[11];
+		String result = "Day 1 - \nThis is " + recitepoem + "\n\n";
+		for(int i = 1;i < 12;i++) {
+			recitepoem = poem[11 - i]+ "\n" + recitepoem;
+			int day = i + 1;
+			if(day == 12)
+				result = result + "Day "+ day +" - \nThis is " + recitepoem;
+			else 
+				result = result + "Day "+ day +" - \nThis is " + recitepoem + "\n\n";
+		}
+		return result;
     }
 }
