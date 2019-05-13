@@ -11,6 +11,17 @@ public class Poet {
 		this.poem = poem.eachdaytale;
 	}
 	
+	public String revealforday(int day) {
+		if(day < 1 || day > 12) {
+			return "Invalid Days";
+		}
+		String poemtillday = poem[11];
+		for(int i = 1;i < day;i++) {
+			poemtillday = poem[11 - i]+ "\n" + poemtillday;
+		}
+		return "This is " + poemtillday;
+	}
+	
 	
     public String recite() {
     	String recitepoem = poem[11];
