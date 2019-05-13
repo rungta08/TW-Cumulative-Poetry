@@ -30,10 +30,10 @@ public class CumulativePoetry {
 			 		poem = poet.revealforday_echo(Integer.parseInt(args[2])); 
 			 		break;
 			 		
-//			 	//Option Recite with Echo
-//			 	case "--recite":
-//			 		poem = poet.recite_echo();
-//			 		break;
+			 	//Option Recite with Echo
+			 	case "--recite":
+			 		poem = poet.recite_echo();
+			 		break;
 			 		
 			 	//Invalid Option
 			 	default:

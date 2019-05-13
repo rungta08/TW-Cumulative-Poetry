@@ -52,19 +52,19 @@ public class Poet {
   		return "This is " + poemtillday;
   	}
   	
-//  	//Functionality to Reveal Poem at once day wise with Echo
-//    public String recite_echo() {
-//    	String recitepoem = poem[11]+ "\n" + poem[11];
-//		String result = "Day 1 - \nThis is " + recitepoem + "\n\n";
-//		for(int i = 1;i < 12;i++) {
-//			recitepoem = poem[11 - i]+ "\n" + recitepoem;
-//			recitepoem = poem[11 - i]+ "\n" + recitepoem;
-//			int day = i + 1;
-//			if(day == 12)
-//				result = result + "Day "+ day +" - \nThis is " + recitepoem;
-//			else 
-//				result = result + "Day "+ day +" - \nThis is " + recitepoem + "\n\n";
-//		}
-//		return result;
-//    }
+  	//Functionality to Reveal Poem at once day wise with Echo
+    public String recite_echo() {
+    	String recitepoem = poem[11]+ "\n" + poem[11];
+		String result = "Day 1 - \nThis is " + recitepoem + "\n\n";
+		for(int i = 1;i < 12;i++) {
+			recitepoem = poem[11 - i]+ "\n" + recitepoem;
+			recitepoem = poem[11 - i]+ "\n" + recitepoem;
+			int day = i + 1;
+			if(day == 12)
+				result = result + "Day "+ day +" - \nThis is " + recitepoem;
+			else 
+				result = result + "Day "+ day +" - \nThis is " + recitepoem + "\n\n";
+		}
+		return result;
+    }
 }
