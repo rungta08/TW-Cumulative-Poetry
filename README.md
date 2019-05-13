@@ -92,9 +92,8 @@ This is the horse and the hound and the horn that belonged to
     the cat that killed
     the rat that ate
     the malth that lay in 
-    the house that Jack built.
-    
-    ```
+    the house that Jack built.   
+```
 
 
 ## Release 2
