@@ -6,7 +6,13 @@ import java.util.List;
 
 public class CumulativePoetry {
 
-	
+	public static final String OPTION_ECHO = "--echo";
+	public static final String OPTION_REVEAL_FOR_DAY = "--reveal-for-day";
+	public static final String OPTION_RECITE = "--recite";
+	public static final String OPTION_RANDOM = "--random";
+	public static final String OPTION_SEED = "--seed";
+	public static final int DEFAULT_SEED = 123;
+	public static final int ZERO = 0; 
 	
 	public static void main(String[] args) {
 		//poem initialised
@@ -28,11 +34,61 @@ public class CumulativePoetry {
 			Poem poem = new Poem();
 			poem.setTale(tale);//set poem
 			
+			Poet poet;
+						
 			Options option = new Options(args);
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
 			
-			Poet poet = new Poet(poem, options);
-			poet.recite();//Recite Poem according to Options
+			if(options.containsKey(OPTION_RANDOM)) {
+				if(options.containsKey(OPTION_SEED)) {
+					poet = new Poet(poem.getRandomTale(options.get(OPTION_SEED)));
+				}
+				else {
+					poet = new Poet(poem.getRandomTale(DEFAULT_SEED));
+				}
+			}
+			else {
+				poet = new Poet(poem.getTale());
+			}
+			
+			String poemForDay;
+			if(options.containsKey(OPTION_REVEAL_FOR_DAY) && options.containsKey(OPTION_RECITE)) {
+				
+				throw new Exception();
+				
+			}
+			
+			else if(options.containsKey(OPTION_REVEAL_FOR_DAY)){
+				
+				if(options.containsKey(OPTION_ECHO)) {
+					poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), options.get(OPTION_ECHO));
+				}
+				else {
+					poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), ZERO);
+				}
+				
+				System.out.println(poemForDay);
+				
+				
+			}
+			else if(options.containsKey(OPTION_RECITE)) {
+
+				if(options.containsKey(OPTION_ECHO)) {
+					poemForDay = poet.recite(options.get(OPTION_ECHO));
+				}
+				else {
+					poemForDay = poet.recite(ZERO);
+				}
+				
+				System.out.println(poemForDay);
+				
+			}
+			else {
+
+				throw new Exception();
+				
+			}
+			
 		}
 		catch(Exception e) {
 			System.out.println("Error1");

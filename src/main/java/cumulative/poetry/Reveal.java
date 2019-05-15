@@ -1,7 +1,6 @@
 package cumulative.poetry;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 //Class to reveal poem for given day
