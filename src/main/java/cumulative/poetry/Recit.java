@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 //Class to Recite Poem For Each Day
-public class Recite {
+public class Recit {
 	
 	
 	//Constants
@@ -16,10 +16,10 @@ public class Recite {
 	
 	List<String> poem;
 	Reveal revealForDay;
-	Echo echo;
+	Repeat echo;
 	
 	//Initialise poem Tale
-	Recite(List<String> poem){
+	Recit(List<String> poem){
 		this.poem = poem;
 	}
 	
@@ -32,7 +32,7 @@ public class Recite {
 		dayTale = revealForDay.getTaleForDay(day); 
 		
 		//get echo tale
-		echo = new Echo(dayTale, echoTimes);
+		echo = new Repeat(dayTale, echoTimes);
 		dayTale = echo.getEchoTale();
 		
 		//Converting list to array

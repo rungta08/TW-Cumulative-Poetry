@@ -5,21 +5,21 @@ import java.util.List;
 //Class Port to recite poem day wise and all together
 public class Poet {
 	
-	Recite recite;
+	Recit recit;
 	
 	
 	//Initialise Poem and give options to poet 
 	Poet(List<String> tale){
-		recite = new Recite(tale);
+		recit = new Recit(tale);
 	}
 	
 	//Method to return recite day 
 	public String reciteEachDay(int day, int echoTimes) {
-		return recite.reciteForDay(day, echoTimes);
+		return recit.reciteForDay(day, echoTimes);
 	}
 	
 	//method to recite poem according to options
 	public String recite(int day) {
-		return recite.recitePoem(day);
+		return recit.recitePoem(day);
 	}
 }

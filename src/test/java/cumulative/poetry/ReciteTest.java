@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class ReciteTest {
 
-	private Recite recite;
+	private Recit recite;
 	List<String> tale = new ArrayList<String>();
 	
 	
@@ -28,7 +28,7 @@ public class ReciteTest {
 	
 	@Test
 	public void shouldRevealTalePerDay() {
-		recite = new Recite(tale);
+		recite = new Recit(tale);
 		String actual = recite.reciteForDay(2, 1);
 		String expected = "This is TestTale4\nTestTale4\nTestTale5\nTestTale5.";
 		assertEquals(expected, actual);
@@ -36,7 +36,7 @@ public class ReciteTest {
 	
 	@Test 
 	public void shouldRevealTaleDayWise() {
-		recite = new Recite(tale);
+		recite = new Recit(tale);
 		String actual = recite.recitePoem(1);
 		String expected = "Day 1\nThis is TestTale5\nTestTale5.\n\nDay 2\nThis is TestTale4\nTestTale4\nTestTale5\nTestTale5.\n\nDay 3\nThis is TestTale3\nTestTale3\nTestTale4\nTestTale4\nTestTale5\nTestTale5.\n\nDay 4\nThis is TestTale2\nTestTale2\nTestTale3\nTestTale3\nTestTale4\nTestTale4\nTestTale5\nTestTale5.\n\nDay 5\nThis is TestTale1\nTestTale1\nTestTale2\nTestTale2\nTestTale3\nTestTale3\nTestTale4\nTestTale4\nTestTale5\nTestTale5.";
 		assertEquals(expected,actual);

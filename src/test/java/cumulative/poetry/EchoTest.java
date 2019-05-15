@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class EchoTest {
 
-	private Echo echo;
+	private Repeat echo;
 	List<String> tale = new ArrayList<String>();
 	
 	
@@ -24,7 +24,7 @@ public class EchoTest {
 	
 	@Test
 	public void shouldEchoTale() {
-		echo = new Echo(tale, 1);
+		echo = new Repeat(tale, 1);
 		List<String> actual = echo.getEchoTale();
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale1");
