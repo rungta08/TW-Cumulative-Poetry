@@ -16,7 +16,7 @@ public class Recit {
 	
 	List<String> poem;
 	Reveal revealForDay;
-	Repeat echo;
+	Echo echo;
 	
 	//Initialise poem Tale
 	Recit(List<String> poem){
@@ -32,7 +32,7 @@ public class Recit {
 		dayTale = revealForDay.getTaleForDay(day); 
 		
 		//get echo tale
-		echo = new Repeat(dayTale, echoTimes);
+		echo = new Echo(dayTale, echoTimes);
 		dayTale = echo.getEchoTale();
 		
 		//Converting list to array

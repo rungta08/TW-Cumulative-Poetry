@@ -1,10 +1,9 @@
 package cumulative.poetry;
 
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class PoetTest {
 	String actual;
 	String expected;
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
 		testTale.add("TestTale1");
 		testTale.add("TestTale2");
@@ -27,6 +26,7 @@ public class PoetTest {
 	}
 	
 	@Test
+	@DisplayName("Test for Each day recitation of given tale with given echo times")
 	public void shouldReciteEachDay() {
 		int dayToRecite = 1;
 		int timesToEcho = 1;
@@ -38,6 +38,7 @@ public class PoetTest {
 	}
 	
 	@Test
+	@DisplayName("Test for Whole poem recitation with given echo times")
 	public void shouldRecite() {
 		int timeToEcho = 0;
 		actual = poet.recite(timeToEcho);

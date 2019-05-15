@@ -4,16 +4,16 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 public class PoemTest {
 
 	private Poem poem;
 	List<String> testTale = new ArrayList<String>();
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
 		testTale.add("TestTale1");
 		testTale.add("TestTale2");
@@ -24,6 +24,7 @@ public class PoemTest {
 	}
 	
 	@Test
+	@DisplayName("Test to generate a random tale from given tale")
 	public void shouldGiveRandomTale() {
 		poem = new Poem();
 		poem.setTale(testTale);

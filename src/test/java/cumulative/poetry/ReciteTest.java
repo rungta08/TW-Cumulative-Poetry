@@ -5,8 +5,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 public class ReciteTest {
 
@@ -14,7 +15,7 @@ public class ReciteTest {
 	List<String> tale = new ArrayList<String>();
 	
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
 		tale.add("TestTale1");
 		tale.add("TestTale2");
@@ -27,6 +28,7 @@ public class ReciteTest {
 	
 	
 	@Test
+	@DisplayName("Test for getting tale in Strign form and Echoed for given Day")
 	public void shouldRevealTalePerDay() {
 		recite = new Recit(tale);
 		String actual = recite.reciteForDay(2, 1);
@@ -35,6 +37,7 @@ public class ReciteTest {
 	}
 	
 	@Test 
+	@DisplayName("Test for getting tale in Strign form and Echoed")
 	public void shouldRevealTaleDayWise() {
 		recite = new Recit(tale);
 		String actual = recite.recitePoem(1);
