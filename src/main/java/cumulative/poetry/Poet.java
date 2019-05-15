@@ -19,7 +19,7 @@ public class Poet {
 	}
 	
 	//method to recite poem according to options
-	public String recite(int day) {
-		return recit.recitePoem(day);
+	public String recite(int echoTimes) {
+		return recit.recitePoem(echoTimes);
 	}
 }
