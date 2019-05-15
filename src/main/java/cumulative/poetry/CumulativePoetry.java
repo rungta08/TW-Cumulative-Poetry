@@ -9,6 +9,7 @@ public class CumulativePoetry {
 	
 	
 	public static void main(String[] args) {
+		//poem initialised
 		List<String> tale = new ArrayList<String>();
 						tale.add("the horse and the hound and the horn that belonged to");
 						tale.add("the farmer sowing his corn that kept"); 
@@ -23,14 +24,15 @@ public class CumulativePoetry {
 						tale.add("the malth that lay in");
 						tale.add("the house that Jack built");
 		try {
+			
 			Poem poem = new Poem();
-			poem.setTale(tale);
+			poem.setTale(tale);//set poem
 			
 			Options option = new Options(args);
-			HashMap<String, Integer> options = option.getOptions();
+			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
 			
 			Poet poet = new Poet(poem, options);
-			poet.recite();
+			poet.recite();//Recite Poem according to Options
 		}
 		catch(Exception e) {
 			System.out.println("Error1");

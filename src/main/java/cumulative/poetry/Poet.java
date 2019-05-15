@@ -5,26 +5,27 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+//Class Port to recite poem day wise and all together
 public class Poet {
 	
+	//constants
 	public static final String OPTION_ECHO = "--echo";
 	public static final String OPTION_REVEAL_FOR_DAY = "--reveal-for-day";
 	public static final String OPTION_RECITE = "--recite";
 	public static final int ZERO = 0; 
 
 	
-	
-	//Initialise poem 
 	HashMap<String, Integer> options;
 	Recite recite;
 	String poemForDay;
 	
-	
+	//Initialise Poem and give options to poet 
 	Poet(Poem poem, HashMap<String, Integer> options){
 		recite = new Recite(poem.getTale());
 		this.options = options;
 	}
 	
+	//method to recite poem according to options
 	public void recite() throws Exception {
 		
 		
