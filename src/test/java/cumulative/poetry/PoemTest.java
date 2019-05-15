@@ -26,8 +26,7 @@ public class PoemTest {
 	@Test
 	@DisplayName("Test to generate a random tale from given tale")
 	public void shouldGiveRandomTale() {
-		poem = new Poem();
-		poem.setTale(testTale);
+		poem = new Poem(testTale);
 		List<String> actual = poem.getRandomTale(123);
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale3");

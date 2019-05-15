@@ -9,16 +9,15 @@ import java.util.Set;
 //Poem defined day wise
 public class Poem {
 	
-	private List<String> tale;
+	final List<String> tale;
+	
+	Poem(List<String> tale){
+		this.tale = tale;
+	}
 	
 	//method to get poem
 	public List<String> getTale() {
 		return tale;
-	}
-
-	//method to set poem
-	public void setTale(List<String> tale) {
-		this.tale = tale;
 	}
 	
 	public List<String> getRandomTale(int seed){

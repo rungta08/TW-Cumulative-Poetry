@@ -31,9 +31,8 @@ public class CumulativePoetry {
 						tale.add("the house that Jack built");
 		try {
 			
-			Poem poem = new Poem();
-			poem.setTale(tale);//set poem
-			
+			Poem poem = new Poem(tale);
+
 			Poet poet;
 						
 			Options option = new Options(args);
