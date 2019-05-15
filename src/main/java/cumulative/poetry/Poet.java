@@ -17,6 +17,7 @@ public class Poet {
 	//Initialise poem 
 	HashMap<String, Integer> options;
 	Recite recite;
+	String poemForDay;
 	
 	
 	Poet(Poem poem, HashMap<String, Integer> options){
@@ -35,8 +36,6 @@ public class Poet {
 		
 		else if(options.containsKey(OPTION_REVEAL_FOR_DAY)){
 			
-			String poemForDay;
-			
 			if(options.containsKey(OPTION_ECHO)) {
 				poemForDay = recite.reciteForDay(options.get(OPTION_REVEAL_FOR_DAY), options.get(OPTION_ECHO));
 			}
@@ -49,6 +48,15 @@ public class Poet {
 			
 		}
 		else if(options.containsKey(OPTION_RECITE)) {
+
+			if(options.containsKey(OPTION_ECHO)) {
+				poemForDay = recite.recitePoem(options.get(OPTION_ECHO));
+			}
+			else {
+				poemForDay = recite.recitePoem(ZERO);
+			}
+			
+			System.out.println(poemForDay);
 			
 		}
 		else {

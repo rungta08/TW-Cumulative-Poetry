@@ -27,7 +27,7 @@ public class RevealTest {
 	
 	
 	@Test
-	public void shouldEchoTale() {
+	public void shouldRevealTale() {
 		reveal = new Reveal(tale);
 		List<String> actual = reveal.getTaleForDay(2);
 		List<String> expected = new ArrayList<String>();
