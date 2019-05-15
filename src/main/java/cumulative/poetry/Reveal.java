@@ -7,8 +7,8 @@ import java.util.List;
 public class Reveal {
 	
 	
-	List<String> tale = new ArrayList<String>();
-	int noOFDays;
+	final List<String> tale;
+	final int noOFDays;
 	
 	//initialise poem
 	Reveal(List<String> tale){

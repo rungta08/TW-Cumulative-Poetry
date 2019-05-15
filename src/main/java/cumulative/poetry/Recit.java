@@ -14,7 +14,7 @@ public class Recit {
 	public static final String PREFIX_RECITE_PER_DAY = "Day ";
 	public static final String SEPEARTOR_DAY_TALE = "\n\n";
 	
-	List<String> poem;
+	final List<String> poem;
 	Reveal revealForDay;
 	Echo echo;
 	

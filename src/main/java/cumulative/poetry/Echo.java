@@ -6,8 +6,8 @@ import java.util.List;
 //Class to echo any given tale
 public class Echo {
 	
-	List<String> tale = new ArrayList<String>();
-	int times;
+	final List<String> tale;
+	final int times;
 	
 	//initialise tale to be echo and no of times
 	Echo(List<String> tale, int times){
@@ -29,14 +29,3 @@ public class Echo {
 
 }
 
-/*
- * 
- * 1. echoTale is not initialized properly - at the time of constructor
- * 2. getEchoTale cannot be called multiple times.
- * 
- * 
- * Echo echoPoem = new Echo(Arrays.asList("some poem"),1);
- * println(echoPoem.getEchoTale());
- * println(echoPoem.getEchoTale());
- * 
- */
