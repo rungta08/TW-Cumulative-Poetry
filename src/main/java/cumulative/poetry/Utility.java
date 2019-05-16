@@ -24,6 +24,17 @@ public class Utility {
 		
 	}
 	
+	public static List<List<String>> listOfListGenerator(List<String> list, int times) {
+		List<List<String>> listOfList = new ArrayList<List<String>>();
+		
+		for(int i_times = 0;i_times <= times;i_times++) { // TODO - repeat
+			listOfList.add(list);
+		}
+		
+		
+		return listOfList;
+	}
+	
 	public static List<String> flattened(List<List<String>> listOfList) {
 		List<String> flattenedList = new ArrayList<String>();
 		

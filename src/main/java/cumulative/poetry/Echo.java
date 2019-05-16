@@ -19,9 +19,8 @@ public class Echo {
 	public List<String> getEchoTale() {
 		List<String> echoTale;
 		List<List<String>> listOfEchoTales = new ArrayList<List<String>>();
-		for(int i = 0;i <= times;i++) {
-			listOfEchoTales.add(tale);
-		}
+		
+		listOfEchoTales = Utility.listOfListGenerator(tale, times);
 		
 		echoTale = Utility.flattened(Utility.zip(listOfEchoTales));
 		
@@ -29,4 +28,13 @@ public class Echo {
 	}
 
 }
+
+/*(
+ * 
+ * 
+ * 
+ * repeat[T](x : T, times : Int) - List[T]
+ * 
+ * 
+ */
 
