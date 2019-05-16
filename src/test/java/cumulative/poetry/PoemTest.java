@@ -30,11 +30,11 @@ public class PoemTest {
 		List<String> actual = poem.getRandomTale(123);
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale3");
-		expected.add("TestTale6");
 		expected.add("TestTale4");
 		expected.add("TestTale1");
 		expected.add("TestTale2");
 		expected.add("TestTale5");
+		expected.add("TestTale6");
 		assertEquals(expected,actual);
 	}
 	

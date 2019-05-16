@@ -9,6 +9,7 @@ import java.util.Set;
 //Poem defined day wise
 public class Poem {
 	
+	
 	final List<String> tale;
 	
 	Poem(List<String> tale){
@@ -45,8 +46,10 @@ public class Poem {
 		List<String> randomTale = new ArrayList<String>();
 		
 		for(int i = 0;i < randomArray.length;i++) {
-			randomTale.add(this.tale.get(randomArray[i]));
+			if(randomArray[i] != this.tale.size() - 1)
+				randomTale.add(this.tale.get(randomArray[i]));
 		}
+		randomTale.add(this.tale.get(this.tale.size() - 1));
 		
 		return randomTale;
 	}
