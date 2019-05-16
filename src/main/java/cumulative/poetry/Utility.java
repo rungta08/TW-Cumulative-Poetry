@@ -1,7 +1,10 @@
 package cumulative.poetry;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 public class Utility {
 	
@@ -27,6 +30,23 @@ public class Utility {
 		listOfList.forEach(flattenedList::addAll);
 		
 		return flattenedList;
+	}
+	
+	public static int[] randomValueGenerator(int seed, int numberRange, int sizeRequired) {
+		Random random = new Random(seed);	 
+		Set<Integer> randomSet = new LinkedHashSet<Integer>(sizeRequired);
+
+		while(randomSet.size()< sizeRequired) {
+			while (randomSet.add(random.nextInt(numberRange)) != true)
+				;
+		}
+		
+		int randomArray[] = new int[randomSet.size()]; 
+		  
+        int i = 0; 
+        for (int x : randomSet) 
+        	randomArray[i++] = x;
+        return randomArray;
 	}
 	
 }

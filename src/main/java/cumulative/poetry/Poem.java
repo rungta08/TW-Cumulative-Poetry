@@ -22,23 +22,8 @@ public class Poem {
 	}
 	
 	public List<String> getRandomTale(int seed){
-		List<String> randomTale = new ArrayList<String>();
-		Random random = new Random(seed);	 
-		Set<Integer> randomSet = new LinkedHashSet<Integer>(tale.size());
-
-		while(randomSet.size()< tale.size()) {
-			while (randomSet.add(random.nextInt(tale.size())) != true)
-				;
-		}
-		
-		int randomArray[] = new int[randomSet.size()]; 
-		  
-        int i = 0; 
-        for (int x : randomSet) 
-        	randomArray[i++] = x; 
-        
-        randomTale = randomize(randomArray);
-        
+		List<String> randomTale = new ArrayList<String>(); 
+        randomTale = randomize(Utility.randomValueGenerator(seed, tale.size(), tale.size()));
 		return randomTale;
 	}
 	
