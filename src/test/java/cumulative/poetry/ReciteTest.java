@@ -1,5 +1,6 @@
 package cumulative.poetry;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class ReciteTest {
 		recite = new Recit(tale);
 		String actual = recite.reciteForDay(2, 1);
 		String expected = "This is TestTale4\nTestTale4\nTestTale5\nTestTale5.";
-		assertEquals(expected, actual);
+		assertThat(actual, is(expected));
 	}
 	
 	@Test 
@@ -42,7 +43,7 @@ public class ReciteTest {
 		recite = new Recit(tale);
 		String actual = recite.recitePoem(1);
 		String expected = "Day 1\nThis is TestTale5\nTestTale5.\n\nDay 2\nThis is TestTale4\nTestTale4\nTestTale5\nTestTale5.\n\nDay 3\nThis is TestTale3\nTestTale3\nTestTale4\nTestTale4\nTestTale5\nTestTale5.\n\nDay 4\nThis is TestTale2\nTestTale2\nTestTale3\nTestTale3\nTestTale4\nTestTale4\nTestTale5\nTestTale5.\n\nDay 5\nThis is TestTale1\nTestTale1\nTestTale2\nTestTale2\nTestTale3\nTestTale3\nTestTale4\nTestTale4\nTestTale5\nTestTale5.";
-		assertEquals(expected,actual);
+		assertThat(actual, is(expected));
 	}
 	
 

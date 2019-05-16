@@ -1,7 +1,7 @@
 package cumulative.poetry;
 
 import static org.junit.Assert.*;
-
+import static org.hamcrest.CoreMatchers.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,7 +31,7 @@ public class EchoTest {
 		expected.add("TestTale1");
 		expected.add("TestTale2");
 		expected.add("TestTale2");
-		assertEquals(expected, actual);
+		assertThat(actual, is(expected));
 	}
 	
 	@Test
@@ -40,7 +40,7 @@ public class EchoTest {
 		echo = new Echo(tale, 1);
 		List<String> firstEcho = echo.getEchoTale();
 		List<String> secondEcho = echo.getEchoTale();
-		assertEquals(firstEcho, secondEcho);
+		assertThat(secondEcho, is(firstEcho));
 	}
 
 }

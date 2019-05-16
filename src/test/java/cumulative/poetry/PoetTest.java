@@ -3,7 +3,8 @@ package cumulative.poetry;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class PoetTest {
 		expected = "This is TestTale6\n" + 
 				"TestTale6.";
 		
-		assertEquals(expected, actual);
+		assertThat(actual, is(expected));
 	}
 	
 	@Test
@@ -74,6 +75,7 @@ public class PoetTest {
 				"TestTale4\n" + 
 				"TestTale5\n" + 
 				"TestTale6.";
+		assertThat(actual, is(expected));
 				
 	}
 	

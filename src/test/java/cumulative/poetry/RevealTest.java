@@ -1,5 +1,6 @@
 package cumulative.poetry;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class RevealTest {
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale4");
 		expected.add("TestTale5");
-		assertEquals(expected, actual);
+		assertThat(actual, is(expected));
 	}
 
 }

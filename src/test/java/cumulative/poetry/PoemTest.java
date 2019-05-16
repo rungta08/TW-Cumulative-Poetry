@@ -1,7 +1,7 @@
 package cumulative.poetry;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +35,7 @@ public class PoemTest {
 		expected.add("TestTale2");
 		expected.add("TestTale5");
 		expected.add("TestTale6");
-		assertEquals(expected,actual);
+		assertThat(actual, is(expected));
 	}
 	
 

@@ -1,9 +1,8 @@
 package cumulative.poetry;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.*;
 import java.util.HashMap;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +22,7 @@ class OptionsTest {
 		expected.put("--reveal-for-day", 1);
 		expected.put("--random", 1);
 		expected.put("--seed", 123);
-		assertEquals(expected, actual);
+		assertThat(actual, is(expected));
 	}
 
 }
