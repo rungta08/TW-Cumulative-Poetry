@@ -30,24 +30,25 @@ public class CumulativePoetry {
 						tale.add("the malth that lay in");
 						tale.add("the house that Jack built");
 		try {
-			
-			Poem poem = new Poem(tale);
 
 			Poet poet;
+			Order poem;
 						
 			Options option = new Options(args);
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
 			
 			if(options.containsKey(OPTION_RANDOM)) {
+				poem = new RandomOrder(tale, options.get(OPTION_SEED));
 				if(options.containsKey(OPTION_SEED)) {
-					poet = new Poet(poem.getRandomTale(options.get(OPTION_SEED)));
+					poet = new Poet(poem.getList());
 				}
 				else {
-					poet = new Poet(poem.getRandomTale(DEFAULT_SEED));
+					poet = new Poet(poem.getList());
 				}
 			}
 			else {
-				poet = new Poet(poem.getTale());
+				poem = new DefaultOrder(tale);
+				poet = new Poet(poem.getList());
 			}
 			
 			String poemForDay;

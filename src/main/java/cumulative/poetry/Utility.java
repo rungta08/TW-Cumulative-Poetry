@@ -27,7 +27,7 @@ public class Utility {
 	public static List<List<String>> listOfListGenerator(List<String> list, int times) {
 		List<List<String>> listOfList = new ArrayList<List<String>>();
 		
-		for(int i_times = 0;i_times <= times;i_times++) { // TODO - repeat
+		for(int i_times = 0;i_times <= times;i_times++) {
 			listOfList.add(list);
 		}
 		
@@ -59,7 +59,7 @@ public class Utility {
         	randomArray[i++] = x;
         return randomArray;
 	}
-	
+		
 }
 
 
