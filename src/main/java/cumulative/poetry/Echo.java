@@ -1,11 +1,10 @@
 package cumulative.poetry;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //Class to echo any given tale
 public class Echo {
-	
-	Utility utility = new Utility();
 	
 	final List<String> tale;
 	final int times;
@@ -19,8 +18,12 @@ public class Echo {
 	//method returning echo tale
 	public List<String> getEchoTale() {
 		List<String> echoTale;
+		List<List<String>> listOfEchoTales = new ArrayList<List<String>>();
+		for(int i = 0;i <= times;i++) {
+			listOfEchoTales.add(tale);
+		}
 		
-		echoTale = Utility.zip(tale, times);
+		echoTale = Utility.flattened(Utility.zip(listOfEchoTales));
 		
 		return echoTale;
 	}
