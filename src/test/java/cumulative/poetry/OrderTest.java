@@ -8,9 +8,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class PoemTest {
+public class OrderTest {
 
-	private Poem poem;
+	private Order poem;
 	List<String> testTale = new ArrayList<String>();
 	
 	@BeforeEach
@@ -24,10 +24,25 @@ public class PoemTest {
 	}
 	
 	@Test
+	@DisplayName("Test to generate a default tale from given tale")
+	public void shouldGiveTale() {
+		poem = new DefaultOrder(testTale);
+		List<String> actual = poem.getList();
+		List<String> expected = new ArrayList<String>();
+		expected.add("TestTale1");
+		expected.add("TestTale2");
+		expected.add("TestTale3");
+		expected.add("TestTale4");
+		expected.add("TestTale5");
+		expected.add("TestTale6");
+		assertThat(actual, is(expected));
+	}
+	
+	@Test
 	@DisplayName("Test to generate a random tale from given tale")
 	public void shouldGiveRandomTale() {
-		poem = new Poem(testTale);
-		List<String> actual = poem.getRandomTale(123);
+		poem = new RandomOrder(testTale, 123);
+		List<String> actual = poem.getList();
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale3");
 		expected.add("TestTale4");
