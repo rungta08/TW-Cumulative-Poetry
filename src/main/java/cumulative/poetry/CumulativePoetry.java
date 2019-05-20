@@ -34,62 +34,60 @@ public class CumulativePoetry {
 			Poet poet;
 			Order taleOrder;
 			String poemForDay;		
+			int echoTimes;
 			int seed;
+			
+			
 			
 			
 			Options option = new Options(args);
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
 			
+			
+			
+			
 			if(options.containsKey(OPTION_RANDOM)) {
-				
 				if(options.containsKey(OPTION_SEED)) {
-					taleOrder = new RandomOrder(tale, options.get(OPTION_SEED));
-					
+					seed = options.get(OPTION_SEED);	
 				}
 				else {
-					taleOrder = new RandomOrder(tale, DEFAULT_SEED);
+					seed = DEFAULT_SEED;
 				}
+				taleOrder = new RandomOrder(tale, seed);
 			}
 			else {
 				taleOrder = new DefaultOrder(tale);
 			}
 			poet = new Poet(taleOrder.orderedList());
 			
-			if(options.containsKey(OPTION_REVEAL_FOR_DAY) && options.containsKey(OPTION_RECITE)) {
-				
-				throw new Exception();
-				
-			}
 			
-			else if(options.containsKey(OPTION_REVEAL_FOR_DAY)){
-				
-				if(options.containsKey(OPTION_ECHO)) {
-					seed = options.get(OPTION_ECHO);
-				}
-				else {
-					seed = ZERO; 
-				}
-				poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), seed);
-				System.out.println(poemForDay);
-				
-				
-			}
-			else if(options.containsKey(OPTION_RECITE)) {
-				if(options.containsKey(OPTION_ECHO)) {
-					seed = options.get(OPTION_ECHO);
-				}
-				else {
-					seed = ZERO;
-				}
-				poemForDay = poet.recite(seed);
-				System.out.println(poemForDay);
-				
+			
+			
+			
+			if(options.containsKey(OPTION_ECHO)) {
+				echoTimes = options.get(OPTION_ECHO);
 			}
 			else {
-
-				throw new Exception();
-				
+				echoTimes = ZERO; 
 			}
+			
+			
+			
+			
+			if(options.containsKey(OPTION_REVEAL_FOR_DAY) && options.containsKey(OPTION_RECITE)) {
+				throw new Exception();	
+			}
+			else if(options.containsKey(OPTION_REVEAL_FOR_DAY)){
+				poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), echoTimes);				
+			}
+			else if(options.containsKey(OPTION_RECITE)) {
+				poemForDay = poet.recite(echoTimes);
+			}
+			else {
+				throw new Exception();
+			}
+			
+			System.out.println(poemForDay);
 			
 		}
 		catch(Exception e) {
