@@ -41,18 +41,16 @@ public class CumulativePoetry {
 				
 				if(options.containsKey(OPTION_SEED)) {
 					taleOrder = new RandomOrder(tale, options.get(OPTION_SEED));
-					poet = new Poet(taleOrder.orderedList());
+					
 				}
 				else {
 					taleOrder = new RandomOrder(tale, DEFAULT_SEED);
-					poet = new Poet(taleOrder.orderedList());
 				}
 			}
 			else {
 				taleOrder = new DefaultOrder(tale);
-				poet = new Poet(taleOrder.orderedList());
 			}
-			
+			poet = new Poet(taleOrder.orderedList());
 			String poemForDay;
 			if(options.containsKey(OPTION_REVEAL_FOR_DAY) && options.containsKey(OPTION_RECITE)) {
 				
