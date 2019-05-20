@@ -74,7 +74,6 @@ public class CumulativePoetry {
 				
 			}
 			else if(options.containsKey(OPTION_RECITE)) {
-
 				if(options.containsKey(OPTION_ECHO)) {
 					poemForDay = poet.recite(options.get(OPTION_ECHO));
 				}

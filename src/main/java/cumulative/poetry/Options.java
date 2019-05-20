@@ -15,7 +15,7 @@ public class Options {
 	Options(String[] args) {
 		for(int option_index = 0;option_index < args.length; option_index++) {
 			if(args[option_index].startsWith("--")) {
-				if(args[option_index+1].matches(REGEX_TO_CHECK_NUMBER)) { 
+				if(option_index + 1 < args.length && args[option_index+1].matches(REGEX_TO_CHECK_NUMBER)) { 
 					options.put(args[option_index], Integer.parseInt(args[option_index+1])); 
 				} 
 				else {
