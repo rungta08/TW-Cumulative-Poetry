@@ -38,11 +38,13 @@ public class CumulativePoetry {
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
 			
 			if(options.containsKey(OPTION_RANDOM)) {
-				poem = new RandomOrder(tale, options.get(OPTION_SEED));
+				
 				if(options.containsKey(OPTION_SEED)) {
+					poem = new RandomOrder(tale, options.get(OPTION_SEED));
 					poet = new Poet(poem.getList());
 				}
 				else {
+					poem = new RandomOrder(tale, DEFAULT_SEED);
 					poet = new Poet(poem.getList());
 				}
 			}
