@@ -13,7 +13,7 @@ public class RandomOrder implements Order{
 		this.seed = seed;
 	}
 	
-	public List<String> getList() {
+	public List<String> orderedList() {
 		List<String> randomTale = new ArrayList<String>(); 
         randomTale = randomize(Utility.randomValueGenerator(seed, list.size(), list.size()), list);
 		return randomTale;

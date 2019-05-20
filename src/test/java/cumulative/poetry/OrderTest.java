@@ -27,7 +27,7 @@ public class OrderTest {
 	@DisplayName("Test to generate a default tale from given tale")
 	public void shouldGiveTale() {
 		poem = new DefaultOrder(testTale);
-		List<String> actual = poem.getList();
+		List<String> actual = poem.orderedList();
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale1");
 		expected.add("TestTale2");
@@ -42,7 +42,7 @@ public class OrderTest {
 	@DisplayName("Test to generate a random tale from given tale")
 	public void shouldGiveRandomTale() {
 		poem = new RandomOrder(testTale, 123);
-		List<String> actual = poem.getList();
+		List<String> actual = poem.orderedList();
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale3");
 		expected.add("TestTale4");

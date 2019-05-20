@@ -12,7 +12,7 @@ public class DefaultOrder implements Order{
 		this.seed = 0;
 	}
 	
-	public List<String> getList() {
+	public List<String> orderedList() {
 		return list;
 	}
 

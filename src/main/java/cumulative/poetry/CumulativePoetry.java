@@ -32,7 +32,7 @@ public class CumulativePoetry {
 		try {
 
 			Poet poet;
-			Order poem;
+			Order taleOrder;
 						
 			Options option = new Options(args);
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
@@ -40,17 +40,17 @@ public class CumulativePoetry {
 			if(options.containsKey(OPTION_RANDOM)) {
 				
 				if(options.containsKey(OPTION_SEED)) {
-					poem = new RandomOrder(tale, options.get(OPTION_SEED));
-					poet = new Poet(poem.getList());
+					taleOrder = new RandomOrder(tale, options.get(OPTION_SEED));
+					poet = new Poet(taleOrder.orderedList());
 				}
 				else {
-					poem = new RandomOrder(tale, DEFAULT_SEED);
-					poet = new Poet(poem.getList());
+					taleOrder = new RandomOrder(tale, DEFAULT_SEED);
+					poet = new Poet(taleOrder.orderedList());
 				}
 			}
 			else {
-				poem = new DefaultOrder(tale);
-				poet = new Poet(poem.getList());
+				taleOrder = new DefaultOrder(tale);
+				poet = new Poet(taleOrder.orderedList());
 			}
 			
 			String poemForDay;
