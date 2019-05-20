@@ -33,7 +33,10 @@ public class CumulativePoetry {
 
 			Poet poet;
 			Order taleOrder;
-						
+			String poemForDay;		
+			int seed;
+			
+			
 			Options option = new Options(args);
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
 			
@@ -51,7 +54,7 @@ public class CumulativePoetry {
 				taleOrder = new DefaultOrder(tale);
 			}
 			poet = new Poet(taleOrder.orderedList());
-			String poemForDay;
+			
 			if(options.containsKey(OPTION_REVEAL_FOR_DAY) && options.containsKey(OPTION_RECITE)) {
 				
 				throw new Exception();
@@ -61,24 +64,24 @@ public class CumulativePoetry {
 			else if(options.containsKey(OPTION_REVEAL_FOR_DAY)){
 				
 				if(options.containsKey(OPTION_ECHO)) {
-					poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), options.get(OPTION_ECHO));
+					seed = options.get(OPTION_ECHO);
 				}
 				else {
-					poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), ZERO);
+					seed = ZERO; 
 				}
-				
+				poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), seed);
 				System.out.println(poemForDay);
 				
 				
 			}
 			else if(options.containsKey(OPTION_RECITE)) {
 				if(options.containsKey(OPTION_ECHO)) {
-					poemForDay = poet.recite(options.get(OPTION_ECHO));
+					seed = options.get(OPTION_ECHO);
 				}
 				else {
-					poemForDay = poet.recite(ZERO);
+					seed = ZERO;
 				}
-				
+				poemForDay = poet.recite(seed);
 				System.out.println(poemForDay);
 				
 			}
