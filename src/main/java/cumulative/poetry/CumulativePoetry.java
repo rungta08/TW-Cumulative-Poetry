@@ -47,12 +47,7 @@ public class CumulativePoetry {
 			
 			
 			if(options.containsKey(OPTION_RANDOM)) {
-				if(options.containsKey(OPTION_SEED)) {
-					seed = options.get(OPTION_SEED);	
-				}
-				else {
-					seed = DEFAULT_SEED;
-				}
+				seed = options.containsKey(OPTION_SEED)?options.get(OPTION_SEED):DEFAULT_SEED;
 				taleOrder = new RandomOrder(tale, seed);
 			}
 			else {
@@ -64,12 +59,7 @@ public class CumulativePoetry {
 			
 			
 			
-			if(options.containsKey(OPTION_ECHO)) {
-				echoTimes = options.get(OPTION_ECHO);
-			}
-			else {
-				echoTimes = ZERO; 
-			}
+			echoTimes = options.containsKey(OPTION_ECHO)?options.get(OPTION_ECHO):ZERO;
 			
 			
 			
