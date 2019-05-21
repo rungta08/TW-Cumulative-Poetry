@@ -37,14 +37,10 @@ public class CumulativePoetry {
 			int echoTimes;
 			int seed;
 			
-			
-			
-			
+
 			Options option = new Options(args);
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
-			
-			
-			
+
 			
 			if(options.containsKey(OPTION_RANDOM)) {
 				seed = options.containsKey(OPTION_SEED)?options.get(OPTION_SEED):DEFAULT_SEED;
@@ -55,9 +51,7 @@ public class CumulativePoetry {
 			}
 			poet = new Poet(taleOrder.orderedList());
 			
-			
-			
-			
+
 			
 			echoTimes = options.containsKey(OPTION_ECHO)?options.get(OPTION_ECHO):ZERO;
 			
