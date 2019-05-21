@@ -1,10 +1,11 @@
 package cumulative.poetry;
 
-import static org.junit.Assert.assertThat;
-import java.util.HashMap;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import cumulative.poetry.CustomMatcher;
+
+import java.util.HashMap;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 class OptionsTest {
 	
