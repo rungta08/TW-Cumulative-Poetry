@@ -29,12 +29,4 @@ public class Echo {
 
 }
 
-/*(
- * 
- * 
- * 
- * repeat[T](x : T, times : Int) - List[T]
- * 
- * 
- */
 

@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface Order {
 	
-	public List<String> orderedList();
+	List<String> orderedList();
 	
 }

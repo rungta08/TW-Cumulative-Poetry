@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="cumulative-poetry-master:jar">
-    <output-path>$USER_HOME$/Documents</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/TW-Cumulative-Poetry_jar</output-path>
     <root id="archive" name="cumulative-poetry-master.jar">
       <element id="module-output" name="cumulative-poetry-master" />
       <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/junit.jar" path-in-jar="/" />

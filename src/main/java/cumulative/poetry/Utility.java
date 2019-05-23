@@ -51,8 +51,8 @@ public class Utility {
 			while (randomSet.add(random.nextInt(numberRange)) != true)
 				;
 		}
-		
-		int randomArray[] = new int[randomSet.size()]; 
+
+        int[] randomArray = new int[randomSet.size()];
 		  
         int i = 0; 
         for (int x : randomSet) 

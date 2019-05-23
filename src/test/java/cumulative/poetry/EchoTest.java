@@ -44,5 +44,4 @@ public class EchoTest {
 		List<String> secondEcho = echo.getEchoTale();
 		assertThat(secondEcho, is(firstEcho));
 	}
-
 }

@@ -1,8 +1,4 @@
-FROM gradle:jdk11-slim 
-
-WORKDIR /home/gradle/project
-COPY build.gradle .
-
-USER root
-RUN chown -R gradle /home/gradle/project
-USER gradle
+FROM openjdk:12-jdk
+WORKDIR /
+COPY out/artifacts/TW-Cumulative-Poetry_jar/cumulative-poetry-master.jar /cumulative-poetry-master.jar
+ENTRYPOINT ["java", "-jar", "/cumulative-poetry-master.jar"]
