@@ -27,7 +27,3 @@ test {
     events = ["passed", "failed", "skipped"]
   }
  }
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
-}
