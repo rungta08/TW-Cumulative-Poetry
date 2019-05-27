@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30c6b2eb-f871-4a98-8230-d682f1062c6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -342,7 +340,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49923897" visible="true" weight="0.16239317" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49923897" visible="true" weight="0.16239317" />
       <window_info id="Structure" order="1" sideWeight="0.50076103" side_tool="true" weight="0.24969475" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -356,12 +354,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32959184" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32959184" />
       <window_info anchor="bottom" id="Docker" order="11" weight="0.32959184" />
-      <window_info anchor="bottom" id="Build" order="12" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Build" order="12" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
