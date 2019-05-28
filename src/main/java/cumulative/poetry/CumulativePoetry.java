@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CumulativePoetry {
 
-	public static final String OPTION_ECHO = "--echo";
+	public static final String OPTION_ECHO = "--defaultEcho";
 	public static final String OPTION_REVEAL_FOR_DAY = "--reveal-for-day";
 	public static final String OPTION_RECITE = "--recite";
 	public static final String OPTION_RANDOM = "--random";
@@ -31,46 +31,43 @@ public class CumulativePoetry {
 						tale.add("the house that Jack built");
 		try {
 
-			Poet poet;
-			Order taleOrder;
-			String poemForDay;		
-			int echoTimes;
-			int seed;
-			
-
 			Options option = new Options(args);
 			HashMap<String, Integer> options = option.getOptions();//retrieving available options to work on
 
-			
+			int echoTimes = options.containsKey(OPTION_ECHO)?options.get(OPTION_ECHO):ZERO;
+
+
+			Echo defaultEcho = new DefaultEcho(echoTimes);
+
+
+			Order taleOrder;
 			if(options.containsKey(OPTION_RANDOM)) {
-				seed = options.containsKey(OPTION_SEED)?options.get(OPTION_SEED):DEFAULT_SEED;
+				int seed = options.containsKey(OPTION_SEED)?options.get(OPTION_SEED):DEFAULT_SEED;
 				taleOrder = new RandomOrder(tale, seed);
 			}
 			else {
 				taleOrder = new DefaultOrder(tale);
 			}
-			poet = new Poet(taleOrder.orderedList());
-			
 
-			
-			echoTimes = options.containsKey(OPTION_ECHO)?options.get(OPTION_ECHO):ZERO;
-			
-			
-			
-			
+
+			Poet poet = new Poet(defaultEcho, taleOrder);
+
+
+			String poemForDay;
 			if(options.containsKey(OPTION_REVEAL_FOR_DAY) && options.containsKey(OPTION_RECITE)) {
 				throw new Exception();	
 			}
 			else if(options.containsKey(OPTION_REVEAL_FOR_DAY)){
-				poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY), echoTimes);				
+				poemForDay = poet.reciteEachDay(options.get(OPTION_REVEAL_FOR_DAY));
 			}
 			else if(options.containsKey(OPTION_RECITE)) {
-				poemForDay = poet.recite(echoTimes);
+				poemForDay = poet.recite();
 			}
 			else {
 				throw new Exception();
 			}
-			
+
+
 			System.out.println(poemForDay);
 			
 		}
@@ -117,12 +114,12 @@ public class CumulativePoetry {
 //		 String poem = "";
 //		 if(args[0].equals(ECHO_OPTION)) {
 //			 switch(args[1]) {
-//			 	//Option Reveal for day with Echo
+//			 	//Option Reveal for day with DefaultEcho
 //			 	case REVEAL_OPTION:
 //			 		poem = poet.revealForDayEcho(Integer.parseInt(args[2])); 
 //			 		break;
 //			 		
-//			 	//Option Recite with Echo
+//			 	//Option Recite with DefaultEcho
 //			 	case RECITE_OPTION:
 //			 		poem = poet.reciteEcho();
 //			 		break;

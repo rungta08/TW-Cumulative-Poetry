@@ -1,6 +1,5 @@
 package cumulative.poetry;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,25 +14,21 @@ public class Recit {
 	public static final String SEPEARTOR_DAY_TALE = "\n\n";
 	
 	final List<String> poem;
-	Reveal revealForDay;
-	Echo echo;
 	
 	//Initialise poem Tale
 	Recit(List<String> poem){
 		this.poem = poem;
 	}
 	
-	//method to recite poem for a Day and echo given no of times
-	public String reciteForDay(int day, int echoTimes) {
-		revealForDay = new Reveal(poem);
-		String taleForDay;
+	//method to recite poem for a Day and defaultEcho given no of times
+	public String reciteForDay(int day, Echo echo) {
+		Reveal revealForDay = new Reveal(poem);
+
+
+		List<String> dayTale = revealForDay.getTaleForDay(day);
 		
-		List<String> dayTale = new ArrayList<String>();
-		dayTale = revealForDay.getTaleForDay(day); 
-		
-		//get echo tale
-		echo = new Echo(dayTale, echoTimes);
-		dayTale = echo.getEchoTale();
+		//get defaultEcho tale
+		dayTale = echo.echoList(dayTale);
 		
 		//Converting list to array
 		String[] dayTaleArray = new String[dayTale.size()];
@@ -42,6 +37,7 @@ public class Recit {
 		}
 		
 		//converting array to String
+		String taleForDay;
 		String dayTaleString = Arrays.deepToString(dayTaleArray);
 		dayTaleString = dayTaleString.substring(1, dayTaleString.length()-1).replace(", ", "\n");
 		
@@ -52,16 +48,16 @@ public class Recit {
 		return taleForDay;
 	}
 	
-	//method to recite whole poem day wise with given echo times
-	public String recitePoem(int echoTimes) {
+	//method to recite whole poem day wise with given defaultEcho times
+	public String recitePoem(Echo echo) {
 		
 		String taleFinal = "";
 		
 		//Concatenate each day poem
 		for(int i = 1;i < poem.size();i++) {
-			taleFinal = taleFinal + PREFIX_RECITE_PER_DAY + i + "\n" +this.reciteForDay(i, echoTimes) + SEPEARTOR_DAY_TALE;
+			taleFinal = taleFinal + PREFIX_RECITE_PER_DAY + i + "\n" +this.reciteForDay(i, echo) + SEPEARTOR_DAY_TALE;
 		}
-		taleFinal = taleFinal + PREFIX_RECITE_PER_DAY + poem.size() + "\n" +this.reciteForDay(poem.size(), echoTimes);
+		taleFinal = taleFinal + PREFIX_RECITE_PER_DAY + poem.size() + "\n" +this.reciteForDay(poem.size(), echo);
 		
 		return taleFinal;
 	}
