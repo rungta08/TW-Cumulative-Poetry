@@ -10,9 +10,9 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class EchoTest {
+public class DefaultEchoTest {
 
-	private Echo echo;
+	private DefaultEcho defaultEcho;
 	List<String> tale = new ArrayList<String>();
 	
 	
@@ -24,10 +24,10 @@ public class EchoTest {
 	
 	
 	@Test
-	@DisplayName("Test to echo given tale")
+	@DisplayName("Test to defaultEcho given tale")
 	public void shouldEchoTale() {
-		echo = new Echo(tale, 1);
-		List<String> actual = echo.getEchoTale();
+		defaultEcho = new DefaultEcho(1);
+		List<String> actual = defaultEcho.echoList(tale);
 		List<String> expected = new ArrayList<String>();
 		expected.add("TestTale1");
 		expected.add("TestTale1");
@@ -37,11 +37,11 @@ public class EchoTest {
 	}
 	
 	@Test
-	@DisplayName("Test to check echo twice gives same result")
+	@DisplayName("Test to check defaultEcho twice gives same result")
 	public void shouldAlwaysEchoTaleWithSameResult() {
-		echo = new Echo(tale, 1);
-		List<String> firstEcho = echo.getEchoTale();
-		List<String> secondEcho = echo.getEchoTale();
+		defaultEcho = new DefaultEcho(1);
+		List<String> firstEcho = defaultEcho.echoList(tale);
+		List<String> secondEcho = defaultEcho.echoList(tale);
 		assertThat(secondEcho, is(firstEcho));
 	}
 }

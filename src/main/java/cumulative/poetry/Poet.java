@@ -1,25 +1,29 @@
 package cumulative.poetry;
 
-import java.util.List;
-
 //Class Port to recite poem day wise and all together
 public class Poet {
 	
 	Recit recit;
+	Echo echo;
 	
 	
 	//Initialise Poem and give options to poet 
-	Poet(List<String> tale){
-		recit = new Recit(tale);
+	Poet(Echo echo, Order order){
+		recit = new Recit(order.orderedList());
+		this.echo = echo;
 	}
 	
 	//Method to return recite day 
-	public String reciteEachDay(int day, int echoTimes) {
-		return recit.reciteForDay(day, echoTimes);
+	public String reciteEachDay(int day) {
+		return recit.reciteForDay(day, echo);
 	}
 	
 	//method to recite poem according to options
-	public String recite(int echoTimes) {
-		return recit.recitePoem(echoTimes);
+	public String recite() {
+		return recit.recitePoem(echo);
 	}
 }
+/*
+tale.reverse()
+new Poet(tale)
+ */

@@ -1,32 +1,9 @@
 package cumulative.poetry;
 
-import java.util.ArrayList;
 import java.util.List;
 
-//Class to echo any given tale
-public class Echo {
+public interface Echo {
 	
-	final List<String> tale;
-	final int times;
+	List<String> echoList(List<String> list);
 	
-	//initialise tale to be echo and no of times
-	Echo(List<String> tale, int times){
-		this.tale = tale;
-		this.times = times;
-	}
-	
-	//method returning echo tale
-	public List<String> getEchoTale() {
-		List<String> echoTale;
-		List<List<String>> listOfEchoTales = new ArrayList<List<String>>();
-		
-		listOfEchoTales = Utility.listOfListGenerator(tale, times);
-		
-		echoTale = Utility.flattened(Utility.zip(listOfEchoTales));
-		
-		return echoTale;
-	}
-
 }
-
-

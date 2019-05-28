@@ -12,7 +12,7 @@ class OptionsTest {
 	private Options options;
 	
 	
-	String[] optionsArray = {"--echo","2","--recite"};
+	String[] optionsArray = {"--defaultEcho","2","--recite"};
 
 	@Test
 	@DisplayName("Test to check creation of options")
@@ -20,7 +20,7 @@ class OptionsTest {
 		options = new Options(optionsArray);
 		HashMap<String, Integer> actual = options.getOptions();
 		HashMap<String, Integer> expected = new HashMap<String, Integer>();
-		expected.put("--echo", 2);
+		expected.put("--defaultEcho", 2);
 		expected.put("--recite", 1);
 		assertThat(actual, CustomMatcher.mapEquivalent(expected));
 	}

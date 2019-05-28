@@ -25,26 +25,25 @@ public class PoetTest {
 		testTale.add("TestTale4");
 		testTale.add("TestTale5");
 		testTale.add("TestTale6");
-		poet = new Poet(testTale);
+		Order order = new DefaultOrder(testTale);
+		Echo echo  = new DefaultEcho(0);
+		poet = new Poet(echo, order);
 	}
 	
 	@Test
-	@DisplayName("Test for Each day recitation of given tale with given echo times")
+	@DisplayName("Test for Each day recitation of given tale with given defaultEcho times")
 	public void shouldReciteEachDay() {
 		int dayToRecite = 1;
-		int timesToEcho = 1;
-		actual = poet.reciteEachDay(dayToRecite, timesToEcho);
-		expected = "This is TestTale6\n" + 
-				"TestTale6.";
+		actual = poet.reciteEachDay(dayToRecite);
+		expected = "This is TestTale6.";
 		
 		assertThat(actual, is(expected));
 	}
 	
 	@Test
-	@DisplayName("Test for Whole poem recitation with given echo times")
+	@DisplayName("Test for Whole poem recitation with given defaultEcho times")
 	public void shouldRecite() {
-		int timeToEcho = 0;
-		actual = poet.recite(timeToEcho);
+		actual = poet.recite();
 		expected = "Day 1\n" + 
 				"This is TestTale6.\n" + 
 				"\n" + 
