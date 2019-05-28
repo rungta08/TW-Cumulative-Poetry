@@ -1,10 +1,11 @@
 package cumulative.poetry;
 
+import org.hamcrest.Description;
+import org.hamcrest.TypeSafeDiagnosingMatcher;
+
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import org.hamcrest.Description;
-import org.hamcrest.TypeSafeDiagnosingMatcher;
 
 
 public class CustomMatcher extends TypeSafeDiagnosingMatcher<Map<String, Integer>> {
